@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 20,
+      "major": "Computer Science",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 22,
+      "major": "Electrical Engineering",
+      "email": "jane.smith@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "age": 19,
+      "major": "Biology",
+      "email": "michael.johnson@example.com"
+    },
+    {
+      "id": 4,
+      "name": "Emily Lee",
+      "age": 21,
+      "major": "Psychology",
+      "email": "emily.lee@example.com"
+    },
+    {
+      "id": 5,
+      "name": "William Wang",
+      "age": 23,
+      "major": "Business Administration",
+      "email": "william.wang@example.com"
+    },
+    {
+      "name": "binamin",
+      "age": "45",
+      "major": "Software dev",
+      "email": "zei@gmail.com",
+      "id": 6
+    }
+  ]
+}
