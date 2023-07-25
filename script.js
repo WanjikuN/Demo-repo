@@ -23,18 +23,41 @@ fetch(base_url)
     data.forEach(i => {
         let li = document.createElement('li')
         li.innerHTML = `
-            <p>
-                <h4>Name: ${i.name}</h4>
+            <p >
+                <h4 >Name: ${i.name}</h4>
                 <h6>Age: ${i.age}</h6>
                 <h5>Major: ${i.major}</h5>
                 <div>   
                     <button onclick="updateStudent(${i.id})">Update</button>
-                    <button>DELETE</button>
+                    <button onclick="handleDelete(${i.id})">DELETE</button>
 
                 </div>
             </p>
         `
+        // li.setAttribute('id',i.id);
+        
+          
         listy.appendChild(li)
+            // Delete Object
+            function handleDelete(){
+                fetch(`${base_url}/${i.id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }  
+            }
+                    
+            ).then(resp => {
+                if(resp.ok){
+                    alert (`${i.name} deleted successfully`)
+                    // reload page
+                    window.location.reload();
+                }else{
+                    alert (`Error when deleting ${i.name} `)
+                }
+
+                    })
+            }
     });
 })
 
@@ -103,7 +126,25 @@ const updateStudent = (studentId) =>{
             
     )
 }
+function handleDelete(id){
+    fetch(`${base_url}/${id}`,{
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    }  
+    })
+    .then(resp => {
+        if(resp.ok){
+            alert (` deleted successfully`)
+            // reload page
+            window.location.reload();
+        }else{
+            alert (`Error when deleting  `)
+        }
+})
+            
 
+}
 
 
 

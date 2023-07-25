@@ -1,13 +1,6 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "age": 20,
-      "major": "Computer Science",
-      "email": "john.doe@example.com"
-    },
-    {
       "id": 2,
       "name": "Jane Smith",
       "age": 22,
