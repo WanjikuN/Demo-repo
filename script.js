@@ -27,6 +27,11 @@ fetch(base_url)
                 <h4>Name: ${i.name}</h4>
                 <h6>Age: ${i.age}</h6>
                 <h5>Major: ${i.major}</h5>
+                <div>   
+                    <button onclick="updateStudent(${i.id})">Update</button>
+                    <button>DELETE</button>
+
+                </div>
             </p>
         `
         listy.appendChild(li)
@@ -66,6 +71,39 @@ let addStudent = (e) =>{
 }
 
 studentForm.addEventListener('submit',addStudent)
+
+// addbutton.addEventListener('click',addStudent)
+
+// PUT => 2 parameters. baseUrl && id
+const updateStudent = (studentId) =>{
+    console.log(studentId)
+
+    let name  = prompt("Update name:")
+    let age  = parseInt(prompt("Update age:"))
+    let major  = prompt("Update major:")
+    let email  = prompt("Update email:")
+
+    
+    const updateStudentData ={
+        id: studentId,
+        name: name,
+        age: age,
+        major: major,
+        email: email,
+    }
+
+    fetch(`${base_url}/${studentId}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updateStudentData)
+        
+    }
+            
+    )
+}
+
 
 
 
