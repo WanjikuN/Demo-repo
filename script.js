@@ -38,26 +38,7 @@ fetch(base_url)
         
           
         listy.appendChild(li)
-            // Delete Object
-            function handleDelete(){
-                fetch(`${base_url}/${i.id}`,{
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }  
-            }
-                    
-            ).then(resp => {
-                if(resp.ok){
-                    alert (`${i.name} deleted successfully`)
-                    // reload page
-                    window.location.reload();
-                }else{
-                    alert (`Error when deleting ${i.name} `)
-                }
-
-                    })
-            }
+            
     });
 })
 
@@ -145,7 +126,3 @@ function handleDelete(id){
             
 
 }
-
-
-
-
